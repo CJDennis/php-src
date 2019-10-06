@@ -4507,7 +4507,7 @@ yy218:
 	YYDEBUG(218, *YYCURSOR);
 #line 1708 "parse_date.re"
 	{
-		DEBUG_OUTPUT("monthtext");
+		DEBUG_OUTPUT("monthfull | monthabbr");
 		TIMELIB_INIT;
 		TIMELIB_HAVE_DATE();
 		s->time->m = timelib_lookup_month((char **) &ptr);
@@ -8504,7 +8504,7 @@ yy419:
 	YYDEBUG(419, *YYCURSOR);
 #line 1331 "parse_date.re"
 	{
-		DEBUG_OUTPUT("iso8601date4 | iso8601date2 | iso8601dateslash | dateslash");
+		DEBUG_OUTPUT("iso8601date4 | iso8601dateslash | dateslash");
 		TIMELIB_INIT;
 		TIMELIB_HAVE_DATE();
 		s->time->y = timelib_get_unsigned_nr((char **) &ptr, 4);
@@ -10550,7 +10550,7 @@ yy569:
 	YYDEBUG(571, *YYCURSOR);
 #line 1400 "parse_date.re"
 	{
-		DEBUG_OUTPUT("pointed date YYYY");
+		DEBUG_OUTPUT("pointeddate4");
 		TIMELIB_INIT;
 		TIMELIB_HAVE_DATE();
 		s->time->d = timelib_get_nr((char **) &ptr, 2);
@@ -10598,7 +10598,7 @@ yy576:
 #line 1412 "parse_date.re"
 	{
 		int length = 0;
-		DEBUG_OUTPUT("pointed date YY");
+		DEBUG_OUTPUT("pointeddate2");
 		TIMELIB_INIT;
 		TIMELIB_HAVE_DATE();
 		s->time->d = timelib_get_nr((char **) &ptr, 2);

@@ -1330,7 +1330,7 @@ weekdayof        = (reltextnumber|reltexttext) space (dayfull|dayabbr) space 'of
 
 	iso8601date4 | iso8601dateslash | dateslash
 	{
-		DEBUG_OUTPUT("iso8601date4 | iso8601date2 | iso8601dateslash | dateslash");
+		DEBUG_OUTPUT("iso8601date4 | iso8601dateslash | dateslash");
 		TIMELIB_INIT;
 		TIMELIB_HAVE_DATE();
 		s->time->y = timelib_get_unsigned_nr((char **) &ptr, 4);
@@ -1399,7 +1399,7 @@ weekdayof        = (reltextnumber|reltexttext) space (dayfull|dayabbr) space 'of
 
 	pointeddate4
 	{
-		DEBUG_OUTPUT("pointed date YYYY");
+		DEBUG_OUTPUT("pointeddate4");
 		TIMELIB_INIT;
 		TIMELIB_HAVE_DATE();
 		s->time->d = timelib_get_nr((char **) &ptr, 2);
@@ -1412,7 +1412,7 @@ weekdayof        = (reltextnumber|reltexttext) space (dayfull|dayabbr) space 'of
 	pointeddate2
 	{
 		int length = 0;
-		DEBUG_OUTPUT("pointed date YY");
+		DEBUG_OUTPUT("pointeddate2");
 		TIMELIB_INIT;
 		TIMELIB_HAVE_DATE();
 		s->time->d = timelib_get_nr((char **) &ptr, 2);
@@ -1707,7 +1707,7 @@ weekdayof        = (reltextnumber|reltexttext) space (dayfull|dayabbr) space 'of
 
 	monthfull | monthabbr
 	{
-		DEBUG_OUTPUT("monthtext");
+		DEBUG_OUTPUT("monthfull | monthabbr");
 		TIMELIB_INIT;
 		TIMELIB_HAVE_DATE();
 		s->time->m = timelib_lookup_month((char **) &ptr);
